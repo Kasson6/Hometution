@@ -16,10 +16,14 @@ const app = express();
 
 // Create MySQL connection
 const connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "hometution"
+    //host: "localhost",
+    //user: "root",
+    //password: "",
+    //database: "hometution"
+    host: 'd4free.net',
+    user: 'kasson',
+    password: 'kasson12345',
+    database: 'hometution'
 });
 
 connection.connect((err) => {
