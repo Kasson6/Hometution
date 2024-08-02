@@ -1,0 +1,144 @@
+<!-- addTutor.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Tutor</title>
+    <!-- Bootstrap CSS link (adjust the path as per your setup) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Add New Tutor</h2>
+        <form action="/addTutor" method="POST" enctype="multipart/form-data">
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter phone" required>
+            </div>
+
+            <!-- Address -->
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="Enter address" required>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+            </div>
+
+            <!-- Qualification -->
+            <div class="form-group">
+                <label for="qualification">Qualification:</label>
+                <input type="text" class="form-control" id="qualification" name="qualification" placeholder="Enter qualification" required>
+            </div>
+
+            <!-- Experience -->
+            <div class="form-group">
+                <label for="experience">Experience (years):</label>
+                <select class="form-control" id="experience" name="experience" required>
+                    <% for (let i = 1; i <= 50; i++) { %>
+                        <option value="<%= i %>"><%= i %></option>
+                    <% } %>
+                </select>
+            </div>
+
+            <!-- Hourly Rate -->
+            <div class="form-group">
+                <label for="hourlyRate">Hourly Rate:</label>
+                <select class="form-control" id="hourlyRate" name="hourlyRate" required>
+                    <% for (let i = 40; i <= 120; i += 10) { %>
+                        <option value="<%= i %>">$<%= i %></option>
+                    <% } %>
+                </select>
+            </div>
+
+            <!-- Subjects -->
+            <div class="form-group">
+                <label for="subjects">Subjects:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="math" name="subjects[]" value="Math">
+                    <label class="form-check-label" for="math">Math</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="science" name="subjects[]" value="Science">
+                    <label class="form-check-label" for="science">Science</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="chinese" name="subjects[]" value="Chinese">
+                    <label class="form-check-label" for="chinese">Chinese</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="malay" name="subjects[]" value="Malay">
+                    <label class="form-check-label" for="malay">Malay</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="indian" name="subjects[]" value="Indian">
+                    <label class="form-check-label" for="indian">Indian</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="english" name="subjects[]" value="English">
+                    <label class="form-check-label" for="english">English</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="history" name="subjects[]" value="History">
+                    <label class="form-check-label" for="history">History</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="geography" name="subjects[]" value="Geography">
+                    <label class="form-check-label" for="geography">Geography</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="literature" name="subjects[]" value="Literature">
+                    <label class="form-check-label" for="literature">Literature</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="foodAndNutrition" name="subjects[]" value="Food and Nutrition">
+                    <label class="form-check-label" for="foodAndNutrition">Food and Nutrition</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="accounting" name="subjects[]" value="Principle of Accounting">
+                    <label class="form-check-label" for="accounting">Principle of Accounting</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="designTech" name="subjects[]" value="Design and Technology">
+                    <label class="form-check-label" for="designTech">Design and Technology</label>
+                </div>
+            </div>
+
+            <!-- Image Upload -->
+            <div class="form-group">
+                <label for="image">Profile Image:</label>
+                <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Add Tutor</button>
+        </form>
+        
+        <!-- Back Button -->
+        <a href="/tutors" class="btn btn-secondary mt-3">Back to Teachers</a>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (adjust the paths as per your setup) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

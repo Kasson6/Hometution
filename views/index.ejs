@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeTuition</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        line-height: 1.6;
+        background-color: #1a14d0;
+    }
+
+    header.bg-dark {
+      background-color: #5651da !important;
+    }
+
+    .hero {
+        height: 100vh;
+        display: flex;
+        text-align: center;
+        color: rgb(0, 225, 255);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .features .row > div {
+        margin-bottom: 20px;
+    }
+
+    .testimonials .testimonial {
+        border: 1px solid #ddd;
+        background-color: #fff;
+        padding: 15px;
+        margin: 10px;
+        height: 100%; /* Ensure all testimonials are the same height */
+    }
+
+    .testimonial-btn {
+        margin-top: 15px;
+    }
+
+    @media (max-width: 768px) {
+        .hero {
+            height: auto;
+            padding: 50px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+        }
+
+        .features, .testimonials {
+            padding: 20px 10px;
+        }
+    }
+
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    .nav-link {
+      padding: 0.5rem 1rem; /* Adjust padding for proper spacing */
+      color: #f38a8a;
+    }
+
+    .navbar-nav {
+      margin-right: auto; /* Align items to the right */
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #ffffff;
+      padding: 25px;
+    }
+
+    .carousel-inner img {
+      width: 100%;
+      margin: auto;
+      max-height: 700px;
+    }
+
+    .carousel-caption {
+      background-color: rgba(0, 0, 0, 0.7); /* translucent black background */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .carousel-caption h3 {
+      font-size: 2.5em; /* larger font size */
+      color: #fff; /* white text */
+    }
+
+    .carousel-caption p {
+      font-size: 1.5em; /* larger font size */
+      color: #fff; /* white text */
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0069d9;
+        border-color: #0062cc;
+    }
+
+    /* Updated Styles */
+
+    .welcome-section {
+      padding: 80px 0;
+      background-color: #ffffff;
+      border-bottom: 1px solid #eeeeee;
+      text-align: center;
+    }
+
+    .welcome-section h2 {
+      font-size: 2.5rem;
+      color: #343a40;
+    }
+
+    .welcome-section p {
+      font-size: 1.2rem;
+      color: #666666;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .features-section {
+      background-color: #f8f9fa;
+      padding: 80px 0;
+    }
+
+    .features-section .card {
+      border: none;
+      transition: transform 0.3s ease-in-out;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      height: 100%; /* Ensure all cards are the same height */
+    }
+
+    .features-section .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .features-section .card-title {
+      font-size: 1.8rem;
+      color: #343a40;
+    }
+
+    .features-section .card-text {
+      font-size: 1.2rem;
+      color: #666666;
+    }
+
+    .testimonials-section {
+      background-color: #ffffff;
+      padding: 80px 0;
+    }
+
+    .testimonials-section .testimonial {
+      border: 1px solid #eeeeee;
+      background-color: #f8f9fa;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonials-section .testimonial p {
+      font-size: 1.4rem;
+      color: #666666;
+    }
+
+    .testimonials-section .testimonial strong {
+      font-size: 1.6rem;
+      color: #343a40;
+    }
+
+    .testimonial-btn {
+      margin-top: 15px;
+      background-color: #343a40;
+      color: #ffffff;
+      border: none;
+    }
+
+    .testimonial-btn:hover {
+      background-color: #292e36;
+    }
+
+    .enquiry-btn {
+      margin-top: 15px;
+      background-color: #343a40;
+      color: #ffffff;
+      border: none;
+    }
+
+    .enquiry-btn:hover {
+      background-color: #292e36;
+    }
+
+    @media (max-width: 992px) {
+      .features-section .card {
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="bg-dark text-white py-3 sticky-top" style="background-color: #5651da;">
+  <nav class="container d-flex justify-content-between align-items-center">
+    <ul class="nav">
+      <li class="nav-item"><a class="nav-link text-white" href="/">Home</a></li>
+      <li class="nav-item"><a class="nav-link text-white" href="/nonadmintutor">Teachers</a></li>
+      <li class="nav-item"><a class="nav-link text-white" href="/entry">Login</a></li>
+      <li class="nav-item"><a class="nav-link text-white" href="/enquiry">Enquiry</a></li>
+      <li class="nav-item"><a class="nav-link text-white" href="/reviews">Review</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/teachers.png" alt="Image">
+      <div class="carousel-caption">
+        <h3>Our teachers</h3>
+        <p>Click here to join the teacher family</p>
+        <a href="/signup" class="btn btn-primary">Sign up!</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/parents.webp">
+      <div class="carousel-caption">
+        <h3>Our parents</h3>
+        <p>Click here to join the parent family</p>
+        <a href="/signup" class="btn btn-primary">Sign up!</a>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<main>
+  <section class="hero">
+    <h1 class="display-3">Welcome to Home Tutor Singapore</h1>
+    <p class="lead">Understanding your needs as a parent and providing you with a solution</p>
+    <a href="/signup" class="btn btn-dark">Get Started</a>
+  </section>
+
+  <section class="welcome-section container text-center py-5">
+    <h2>Hello and a great welcome to Home Tutor Singapore!</h2>
+    <p>Are you worried your child needs an extra push to catch up and get a better grade in school? Worry no more as our qualified teachers are excited to unlock your child's potential!</p>
+  </section>
+
+  <section class="features-section container text-center py-5">
+    <h2 class="mb-5">Why Choose Us?</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Qualified Tutors</h3>
+            <p class="card-text">All our tutors are highly qualified and experienced.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Personalized Learning</h3>
+            <p class="card-text">We provide personalized learning plans to meet your needs.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">We care and here you</h3>
+            <p class="card-text">Don't be afraid to drop our agents an enquiry as we are free 24/7 to cater to your needs</p>
+            <a href="/enquiry" class="btn enquiry-btn">Enquiry</a>
+          </div>
+        </div>
+      </div>
+      
+      
+  </section>
+
+  <section class="testimonials-section container text-center py-5">
+    <h2 class="mb-5">What Our Clients Say</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="testimonial">
+            <p>"HomeTuition has been a game changer for my child's education."</p>
+            <p><strong>- Parent Name</strong></p>
+            <a href="/review" class="btn testimonial-btn">Write a Review</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="testimonial">
+            <p>"The tutors are amazing and very professional."</p>
+            <p><strong>- Parent Name</strong></p>
+            <a href="/review" class="btn testimonial-btn">Write a Review</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-dark text-white text-center py-3">
+  <p>&copy; 2024 Home Tutor Singapore. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
